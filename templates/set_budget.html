@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card mx-auto" style="max-width: 520px; margin-top: 50px">
+    <article class="card-body">
+      <header class="mb-4"><h4 class="card-title text-primary">SET BUDGET</h4></header>
+      <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Category Name</label>
+            {{form.name}}
+        </div>
+        <div class="mb-4">
+            <label for="amount" class="form-label">Budget</label>
+            {{form.budget}}
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+        {{form.errors}} {{form.non_field_errors}}
+      </form>
+    </article>
+  </div>
+
+{% endblock content %}
+

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<div class="row mt-3">
+    {% for category in  summaries %}
+    <div class="col-sm-4 mb-3">
+      <div class="card">
+          <div class="card-header"><h4>{{category.name}}</h4></div>
+        <div class="card-body">
+          <p class="card-text">Total Budget: <b>{{category.budget}}Tk</b></p>
+          <p class="card-text">Total Expense: {{category.total_expense}}tk</p>
+          <p class="card-text">Amount Left: {{ category.amount_left }}tk</p>
+          <a href="{% url "categorywise_expenses" category.id %}" class="btn btn-primary">View Details</a>
+          <a href="{% url "update_budget" category.id %}" class="btn btn-warning mx-3">Update Category</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
+
