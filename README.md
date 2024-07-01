@@ -25,7 +25,7 @@ Ensure you have the following installed on your system:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/raghib6/ExpenseTracker.git
+   git clone https://github.com/raghib6/Expense-Tracker.git
    cd ExpenseTracker
    ```
 
